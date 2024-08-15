@@ -1,50 +1,53 @@
-
+import toast from "react-hot-toast";
+import { useLocation, useNavigate } from "react-router-dom";
+import useAxiosPablic from "../../../Hooks/useAxiosPpablic";
+import useAuth from "../../../Hooks/useAuth";
 
 const Googlebtn = () => {
-  // const axiosPublic = useAxiosPablic();
-  // const location = useLocation();
-  // const navigate = useNavigate();
-  // const { singInUserByGoogle, setLoading, signOutUser } = useAuth();
-  // const handleGoogleBtn = () => {
-  //   signOutUser();
-  //   singInUserByGoogle()
-  //     .then((res) => {
-  //       if (res.user.displayName) {
-  //         const userInfo = {
-  //           name: res.user.displayName,
-  //           email: res.user.email,
-  //         };
-  //         axiosPublic
-  //           .post("/users", userInfo)
-  //           .then(() => {
-  //             toast.success("Signin successful ");
-  //             navigate(location?.state ? location.state : "/");
-  //           })
-  //           .catch((err) => console.log(err));
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //       if (
-  //         error.code === "auth/account-exists-with-different-credential" ||
-  //         error.code === "auth/email-already-in-use"
-  //       ) {
-  //         toast.error("This email alreay exist");
-  //         setLoading(false);
-  //       }
-  //       if (error.code === "auth/popup-closed-by-user") {
-  //         toast.error("Sign-in process was not completed. Please try again.");
-  //         setLoading(false);
-  //       }
-  //     });
-  // };
+  const axiosPublic = useAxiosPablic();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { singInUserByGoogle, setLoading, signOutUser } = useAuth();
+  const handleGoogleBtn = () => {
+    signOutUser();
+    singInUserByGoogle()
+      .then((res) => {
+        if (res.user.displayName) {
+          const userInfo = {
+            name: res.user.displayName,
+            email: res.user.email,
+          };
+          axiosPublic
+            .post("/users", userInfo)
+            .then(() => {
+              toast.success("Signin successful ");
+              navigate(location?.state ? location.state : "/");
+            })
+            .catch((err) => console.log(err));
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        if (
+          error.code === "auth/account-exists-with-different-credential" ||
+          error.code === "auth/email-already-in-use"
+        ) {
+          toast.error("This email alreay exist");
+          setLoading(false);
+        }
+        if (error.code === "auth/popup-closed-by-user") {
+          toast.error("Sign-in process was not completed. Please try again.");
+          setLoading(false);
+        }
+      });
+  };
   return (
     <div className="flex flex-col w-full ">
       <div className="text-center mb-2 ">OR , Login with </div>
       <div className="flex justify-center ">
         {" "}
         <div
-          // onClick={handleGoogleBtn}
+          onClick={handleGoogleBtn}
           className="cursor-pointer bg-white rounded-full p-1 flex gap-1 text-black items-center pr-3"
         >
           <img

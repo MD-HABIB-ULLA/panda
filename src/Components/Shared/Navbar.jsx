@@ -1,8 +1,13 @@
 import { FaBars } from "react-icons/fa6";
 import { Link, NavLink } from "react-router-dom";
 import { IoIosSearch } from "react-icons/io";
+import { AuthContext } from "../../Provider/AuthProvider";
+import useAuth from "../../Hooks/useAuth";
 
 const Navbar = () => {
+  const { user, signOutUser } = useAuth();
+
+  console.log(user);
   const listData = [
     {
       name: "Home",
@@ -19,10 +24,6 @@ const Navbar = () => {
     {
       name: "Contact Us",
       path: "/contactUs",
-    },
-    {
-      name: "Log in",
-      path: "/logIn",
     },
   ];
   const list = (
@@ -56,25 +57,97 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content  bg-white/10 lg:backdrop-blur-none backdrop-blur-lg lg:border-none lg:shadow-none border border-white/20  rounded-xl shadow-lg bg-gray-300 z-[1] mt-3 w-52 p-2 "
+              className="menu menu-sm dropdown-content  bg-white/10 lg:backdrop-blur-none backdrop-blur-lg lg:border-none lg:shadow-none border border-white/20  rounded-xl shadow-lg bg-gray-300 z-40 mt-3 w-52 p-2 "
             >
               {list}
+              <li className=" py-2 mt-2 text-sm font-bold rounded-lgb  lg:mt-0 lg:ml-4 hover:text-gray-900  rounded-lg transition-colors duration-500  ">
+                {user ? (
+                  <div className="dropdown dropdown-bottom dropdown-end">
+                    <div tabIndex={0} role="button" className=" ">
+                      Profile
+                    </div>
+                    <ul
+                      tabIndex={0}
+                      className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+                    >
+                      <li className="hover:normal- hover:bg-none">
+                        <div className="avatar mx-auto ">
+                          <div className="ring-[#FF2279] ring-offset-base-100 w-10 rounded-full ring ring-offset-2">
+                            <img src={user.photoURL} />
+                          </div>
+                        </div>
+                      </li>
+                      <li className="text-center">{user.displayName}</li>
+                      <li
+                        className="text-center text-error"
+                        onClick={() => signOutUser()}
+                      >
+                        Log out{" "}
+                      </li>
+                    </ul>
+                  </div>
+                ) : (
+                  <Link to={"/logIn"}>Log In</Link>
+                )}
+              </li>
             </ul>
           </div>
           <Link to={"/"} className=" lg:px-3 flex gap-1 mr-4 text-xl ">
-            <img src="https://i.ibb.co/f9DTcfx/Group-33188.png"  className="" alt="" />
-            <div className="lg:text-2xl text-base font-bold uppercase">Panda</div>
+            <img
+              src="https://i.ibb.co/f9DTcfx/Group-33188.png"
+              className=""
+              alt=""
+            />
+            <div className="lg:text-2xl text-base font-bold uppercase">
+              Panda
+            </div>
           </Link>
           <div className="lg:w-full    flex-1 ">
             <label className="input  input-bordered flex items-center   rounded-full h-10">
-              <input type="text" className="grow flex-1 w-full lg:w-auto" placeholder="Search" />
-              <IoIosSearch/>
+              <input
+                type="text"
+                className="grow flex-1 w-full lg:w-auto"
+                placeholder="Search"
+              />
+              <IoIosSearch />
             </label>
           </div>
         </div>
 
         <div className="justify-end hidden lg:flex ">
-          <ul className="menu menu-horizontal px-1">{list}</ul>
+          <ul className="menu menu-horizontal px-1 items-center">
+            {list}
+            <li className=" py-2 mt-2 text-sm font-bold rounded-lgb  lg:mt-0 lg:ml-4 hover:text-gray-900  rounded-lg transition-colors duration-500  ">
+              {user ? (
+                <div className="dropdown dropdown-bottom dropdown-end">
+                  <div tabIndex={0} role="button" className=" ">
+                    Profile
+                  </div>
+                  <ul
+                    tabIndex={0}
+                    className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+                  >
+                    <li className="hover:normal- hover:bg-none">
+                      <div className="avatar mx-auto ">
+                        <div className="ring-[#FF2279] ring-offset-base-100 w-10 rounded-full ring ring-offset-2">
+                          <img src={user.photoURL} />
+                        </div>
+                      </div>
+                    </li>
+                    <li className="text-center">{user.displayName}</li>
+                    <li
+                      className="text-center text-error"
+                      onClick={() => signOutUser()}
+                    >
+                      Log out{" "}
+                    </li>
+                  </ul>
+                </div>
+              ) : (
+                <Link to={"/logIn"}>Log In</Link>
+              )}
+            </li>
+          </ul>
         </div>
       </div>
     </div>
