@@ -1,5 +1,6 @@
 import { FaBars } from "react-icons/fa6";
 import { Link, NavLink } from "react-router-dom";
+import { IoIosSearch } from "react-icons/io";
 
 const Navbar = () => {
   const listData = [
@@ -9,7 +10,7 @@ const Navbar = () => {
     },
     {
       name: "Product",
-      path: "/product",
+      path: "/products",
     },
     {
       name: "About Us",
@@ -18,6 +19,10 @@ const Navbar = () => {
     {
       name: "Contact Us",
       path: "/contactUs",
+    },
+    {
+      name: "Log in",
+      path: "/logIn",
     },
   ];
   const list = (
@@ -44,7 +49,7 @@ const Navbar = () => {
   return (
     <div>
       <div className="navbar bg-base-100 max-w-7xl m-auto justify-between gap-3 lg:px-0 px-3 duration-500">
-        <div className="justify-start flex-1 lg:space-x-4 flex">
+        <div className="justify-start items-center flex-1 lg:space-x-4 flex flex-wrap lg:flex-nowrap lg:space-x-4">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <FaBars className="text-xl" />
@@ -56,25 +61,14 @@ const Navbar = () => {
               {list}
             </ul>
           </div>
-          <Link to={"/"} className=" px-3 flex gap-1  text-xl">
+          <Link to={"/"} className=" lg:px-3 flex gap-1 mr-4 text-xl ">
             <img src="https://i.ibb.co/f9DTcfx/Group-33188.png"  className="" alt="" />
-            <div className="lg:text-2xl text-xl font-bold uppercase">Panda</div>
+            <div className="lg:text-2xl text-base font-bold uppercase">Panda</div>
           </Link>
-          <div className="lg:w-full  ml-3 flex-1 ">
-            <label className="input  input-bordered flex items-center gap-2  rounded-full h-10">
-              <input type="text" className="grow" placeholder="Search" />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                className="h-4 w-4 opacity-70"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-                  clipRule="evenodd"
-                />
-              </svg>
+          <div className="lg:w-full    flex-1 ">
+            <label className="input  input-bordered flex items-center   rounded-full h-10">
+              <input type="text" className="grow flex-1 w-full lg:w-auto" placeholder="Search" />
+              <IoIosSearch/>
             </label>
           </div>
         </div>

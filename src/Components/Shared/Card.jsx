@@ -3,7 +3,7 @@ import Button from "./Button";
 const Card = () => {
   return (
     <div>
-      <div className="p-4 bg-[#FF2279]/5 border-2 border-[#FF2279]/20 rounded-2xl flex flex-col justify-center gap-5">
+      <div className="p-4 bg-[#FF2279]/5    rounded-2xl flex flex-col justify-center gap-5">
         <div className="h-44">
           {" "}
           <img
