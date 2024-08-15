@@ -17,13 +17,9 @@ const Googlebtn = () => {
             name: res.user.displayName,
             email: res.user.email,
           };
-          axiosPublic
-            .post("/users", userInfo)
-            .then(() => {
-              toast.success("Signin successful ");
-              navigate(location?.state ? location.state : "/");
-            })
-            .catch((err) => console.log(err));
+
+          toast.success("Signin successful ");
+          navigate(location?.state ? location.state : "/");
         }
       })
       .catch((error) => {
