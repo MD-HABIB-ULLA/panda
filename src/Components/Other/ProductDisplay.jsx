@@ -53,12 +53,12 @@ const ProductDisplay = () => {
         <div>
           <div className=" flex justify-between items-center pb-5">
             <p className="text-3xl capitalize">Watch</p>
-            <Link to={"/products?category=Watch"} className="text-[#eb8f8c]">
+            <Link to={"/products?category=watch"} className="text-[#eb8f8c]">
               See More
             </Link>
           </div>
           <div className="grid lg:grid-cols-3 gap-4 grid-cols-1 ">
-            {watch?.map((product) => (
+            {watch?.slice(0,3).map((product) => (
               <Card key={product._id} data={product} />
             ))}
           </div>
@@ -68,12 +68,12 @@ const ProductDisplay = () => {
         <div>
           <div className=" flex justify-between items-center pb-5">
             <p className="text-3xl capitalize">Shoes</p>
-            <Link to={"/products?category=Shoe"} className="text-[#eb8f8c]">
+            <Link to={"/products?category=shoe"} className="text-[#eb8f8c]">
               See More
             </Link>
           </div>
           <div className="grid lg:grid-cols-3 gap-4 grid-cols-1 ">
-            {shoes?.map((product) => (
+            {shoes?.slice(0,3).map((product) => (
               <Card key={product._id} data={product} />
             ))}
           </div>
@@ -83,12 +83,12 @@ const ProductDisplay = () => {
         <div>
           <div className=" flex justify-between items-center pb-5">
             <p className="text-3xl capitalize">Television</p>
-            <Link to={"/products?category=TV"} className="text-[#eb8f8c]">
+            <Link to={"/products?category=tv"} className="text-[#eb8f8c]">
               See More
             </Link>
           </div>
           <div className="grid lg:grid-cols-3 gap-4 grid-cols-1 ">
-            {tv?.map((product) => (
+            {tv?.slice(0,3).map((product) => (
               <Card key={product._id} data={product} />
             ))}
           </div>
@@ -98,12 +98,12 @@ const ProductDisplay = () => {
         <div>
           <div className=" flex justify-between items-center pb-5">
             <p className="text-3xl capitalize">Bags</p>
-            <Link to={"/products?category=Bag"} className="text-[#eb8f8c]">
+            <Link to={"/products?category=bag"} className="text-[#eb8f8c]">
               See More
             </Link>
           </div>
           <div className="grid lg:grid-cols-3 gap-4 grid-cols-1 ">
-            {bag?.map((product) => (
+            {bag?.slice(0,3).map((product) => (
               <Card key={product._id} data={product} />
             ))}
           </div>
