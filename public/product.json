@@ -1,0 +1,365 @@
+[
+  {
+    "date": "2024-08-14",
+    "name": "Citizen A130",
+    "description": "High-quality wireless headphones with noise-canceling feature.",
+    "img": "https://i.ibb.co/qx4c3hm/1.webp",
+    "price": 149.99,
+    "category": "Watch",
+    "brand": "Casio"
+  },
+  {
+    "date": "2024-08-10",
+    "name": "Timex-30AB",
+    "description": "Advanced smartwatch with fitness tracking, heart rate monitoring, and GPS.",
+    "img": "https://i.ibb.co/pndVZ99/2.webp",
+    "price": 199.99,
+    "category": "Watch",
+    "brand": "Timex"
+  },
+  {
+    "date": "2024-08-12",
+    "name": "Timex-50AB",
+   "description": "Portable Bluetooth speaker with powerful bass and long battery life.",
+    "img": "https://i.ibb.co/9GHTHg6/3.webp",
+    "price": 79.99,
+    "category": "Watch",
+    "brand": "Timex"
+  },
+  {
+    "date": "2024-08-09",
+    "name": "Timex-Expart",
+    "description": "Wearable fitness tracker with sleep monitoring and step counting.",
+    "img": "https://i.ibb.co/GQ6n46Y/4.jpg",
+    "price": 59.99,
+    "category": "Watch",
+    "brand": "Timex"
+  },
+  {
+    "date": "2024-08-13",
+    "name": "Casio-p40",
+    "description": "Basic smartwatch with essential fitness tracking and notifications.",
+    "img": "https://i.ibb.co/WnZhLvH/5.jpg",
+    "price": 129.99,
+    "category": "Watch",
+    "brand": "Casio"
+  },
+  {
+    "date": "2024-08-08",
+    "name": "Luxury Watch",
+    "description": "Premium luxury watch with sapphire crystal and leather strap.",
+    "img": "https://i.ibb.co/3sDPjRX/6.jpg",
+    "price": 999.99,
+    "category": "Watch",
+    "brand": "Casio"
+  },
+  {
+    "date": "2024-08-11",
+    "name": "Casio-Digital ",
+    "description": "Durable sports watch with digital display and waterproof design.",
+    "img": "https://i.ibb.co/m4vtrxV/7.webp",
+    "price": 49.99,
+    "category": "Watch",
+    "brand": "Casio"
+  },
+  {
+    "date": "2024-08-07",
+    "name": "Apple-classic",
+    "description": "Classic analog watch with a minimalist design and stainless steel case.",
+    "img": "https://i.ibb.co/C8z3G8z/8.jpg",
+    "price": 89.99,
+    "category": "Watch",
+    "brand": "Apple"
+  },
+  {
+    "date": "2024-08-06",
+    "name": "Hybrid Timex",
+    "description": "Hybrid smartwatch combining traditional design with smart features.",
+    "img": "https://i.ibb.co/cx44W8j/9.webp",
+    "price": 179.99,
+    "category": "Watch",
+    "brand": "Timex"
+  },
+  {
+    "date": "2024-08-05",
+    "name": "Apple Smart Watch",
+    "description": "Colorful smartwatch for kids with GPS tracking and educational games.",
+    "img": "https://i.ibb.co/X3KNHPH/10.jpg",
+    "price": 39.99,
+    "category": "Watch",
+    "brand": "Apple"
+  },
+
+  {
+    "date": "2024-08-14",
+    "name": "Classic Leather Shoes",
+    "description": "Elegant leather shoes perfect for formal occasions.",
+    "img": "https://i.ibb.co/QPRfxtr/1.jpg",
+    "price": 150.0,
+    "category": "Shoe",
+    "brand": "Footwear"
+  },
+
+  {
+    "date": "2024-08-13",
+    "name": "Comfortable Running Shoes",
+    "description": "Lightweight running shoes designed for maximum comfort.",
+    "img": "https://i.ibb.co/F5XB7w4/2.jpg",
+    "price": 90.0,
+    "category": "Shoe",
+    "brand": "Footwear"
+  },
+  {
+    "date": "2024-08-12",
+    "name": "Stylish Sneakers",
+    "description": "Trendy sneakers that blend style with comfort.",
+    "img": "https://i.ibb.co/xXL3XzC/3.webp",
+    "price": 110.0,
+    "category": "Shoe",
+    "brand": "Footwear"
+  },
+  {
+    "date": "2024-08-11",
+    "name": "Casual Slip-On Shoes",
+    "description": "Easy-to-wear slip-on shoes perfect for casual outings.",
+    "img": "https://i.ibb.co/1LQHWtb/4.jpg",
+    "price": 70.0,
+    "category": "Shoe",
+    "brand": "Nike"
+  },
+  {
+    "date": "2024-08-10",
+    "name": "High-Performance Sports Shoes",
+    "description": "Shoes designed for high-intensity sports and training.",
+    "img": "https://i.ibb.co/swTgf1N/5.webp",
+    "price": 130.0,
+    "category": "Shoe",
+    "brand": "Nike"
+  },
+  {
+    "date": "2024-08-09",
+    "name": "Durable Hiking Boots",
+    "description": "Robust boots for outdoor adventures and rough terrains.",
+    "img": "https://i.ibb.co/jgrsx9z/6.webp",
+    "price": 180.0,
+    "category": "Shoe",
+    "brand": "Bata"
+  },
+  {
+    "date": "2024-08-08",
+    "name": "Luxury Formal Shoes",
+    "description": "Premium formal shoes crafted from the finest materials.",
+    "img": "https://i.ibb.co/x19yVvj/7.webp",
+    "price": 250.0,
+    "category": "Shoe",
+    "brand": "Bata"
+  },
+  {
+    "date": "2024-08-07",
+    "name": "Fashionable Loafers",
+    "description": "Stylish loafers that add a touch of elegance to any outfit.",
+    "img": "https://i.ibb.co/k861Rpx/8.jpg",
+    "price": 85.0,
+    "category": "Shoe",
+    "brand": "Nike"
+  },
+  {
+    "date": "2024-08-06",
+    "name": "Breathable Walking Shoes",
+    "description": "Comfortable walking shoes with breathable fabric.",
+    "img": "https://i.ibb.co/Db35Yc6/9.webp",
+    "price": 60.0,
+    "category": "Shoe",
+    "brand": "WalkAir"
+  },
+  {
+    "date": "2024-08-05",
+    "name": "Designer Athletic Shoes",
+    "description": "Athletic shoes that combine performance with designer style.",
+    "img": "https://i.ibb.co/1zjZShj/10.webp",
+    "price": 200.0,
+    "category": "Shoe",
+    "brand": "WalkAir"
+  },
+
+  {
+    "date": "2024-08-14",
+    "name": "Ultra HD Smart TV",
+    "description": "Experience stunning clarity with this 55-inch Ultra HD Smart TV.",
+    "img": "https://i.ibb.co/jyjwSj8/1.jpg",
+    "price": 799.99,
+    "category": "TV",
+    "brand": "Samsung"
+  },
+  {
+    "date": "2024-08-13",
+    "name": "4K OLED TV",
+    "description": "Get the perfect blacks and vibrant colors with this 65-inch 4K OLED TV.",
+    "img": "https://i.ibb.co/xhv0ScX/2.jpg",
+    "price": 1299.99,
+    "category": "TV",
+    "brand": "LG"
+  },
+  {
+    "date": "2024-08-12",
+    "name": "Curved QLED TV",
+    "description": "Immerse yourself in the action with this 55-inch curved QLED TV.",
+    "img": "https://i.ibb.co/q1fBTqf/3.jpg",
+    "price": 999.99,
+    "category": "TV",
+    "brand": "Samsung"
+  },
+  {
+    "date": "2024-08-11",
+    "name": "Smart LED TV",
+    "description": "Enjoy your favorite streaming services on this 43-inch Smart LED TV.",
+    "img": "https://i.ibb.co/njz7MyB/4.webp",
+    "price": 499.99,
+    "category": "TV",
+    "brand": "Walton"
+  },
+  {
+    "date": "2024-08-10",
+    "name": "8K UHD TV",
+    "description": "Witness the next level of detail with this 75-inch 8K UHD TV.",
+    "img": "https://i.ibb.co/9sdv2qJ/5.jpg",
+    "price": 2999.99,
+    "category": "TV",
+    "brand": "Sony"
+  },
+  {
+    "date": "2024-08-09",
+    "name": "LED TV with HDR",
+    "description": "Enhance your viewing experience with this 50-inch LED TV featuring HDR.",
+    "img": "https://i.ibb.co/zPJp4Td/6.webp",
+    "price": 699.99,
+    "category": "TV",
+    "brand": "LG"
+  },
+  {
+    "date": "2024-08-08",
+    "name": "OLED TV with AI",
+    "description": "Revolutionize your home entertainment with this 65-inch OLED TV with AI.",
+    "img": "https://i.ibb.co/whJp3ys/7.webp",
+    "price": 1599.99,
+    "category": "TV",
+    "brand": "Sony"
+  },
+  {
+    "date": "2024-08-07",
+    "name": "4K Ultra HD TV",
+    "description": "Experience every detail with this 55-inch 4K Ultra HD TV.",
+    "img": "https://i.ibb.co/Qck9k8G/8.webp",
+    "price": 899.99,
+    "category": "TV",
+    "brand": "Walton"
+  },
+  {
+    "date": "2024-08-06",
+    "name": "Smart 3D TV",
+    "description": "Enjoy immersive 3D entertainment with this 60-inch Smart 3D TV.",
+    "img": "https://i.ibb.co/7jp1Jt7/9.webp",
+    "price": 1199.99,
+    "category": "TV",
+    "brand": "LG"
+  },
+  {
+    "date": "2024-08-05",
+    "name": "Quantum Dot TV",
+    "description": "Experience vibrant colors and deep blacks with this 65-inch Quantum Dot TV.",
+    "img": "https://i.ibb.co/7pc9qN5/10.png",
+    "price": 1499.99,
+    "category": "TV",
+    "brand": "Samsung"
+  },
+  {
+    "date": "2024-08-14",
+    "name": "Stylish Backpack",
+    "description": "A trendy and durable backpack for daily use.",
+    "img": "https://i.ibb.co/3zrW5mL/1.webp",
+    "price": 49.99,
+    "category": "Bag",
+    "brand": "Nike"
+  },
+  {
+    "date": "2024-08-13",
+    "name": "Casual Shoulder Bag",
+    "description": "A comfortable shoulder bag perfect for casual outings.",
+    "img": "https://i.ibb.co/t3M7h0k/2.jpg",
+    "price": 35.99,
+    "category": "Bag",
+    "brand": "Fastrack"
+  },
+  {
+    "date": "2024-08-12",
+    "name": "Outdoor Travel Bag",
+    "description": "A spacious and rugged travel bag for outdoor adventures.",
+    "img": "https://i.ibb.co/0mQhMgD/3.jpg",
+    "price": 79.99,
+    "category": "Bag",
+    "brand": "CAT"
+  },
+  {
+    "date": "2024-08-11",
+    "name": "Leather Messenger Bag",
+    "description": "A sleek leather messenger bag for professional use.",
+    "img": "https://i.ibb.co/8PRVGck/4.webp",
+    "price": 89.99,
+    "category": "Bag",
+    "brand": "Kiam"
+  },
+  {
+    "date": "2024-08-10",
+    "name": "Sporty Duffel Bag",
+    "description": "A versatile duffel bag ideal for gym and travel.",
+    "img": "https://i.ibb.co/mtHV6V7/5.jpg",
+    "price": 55.99,
+    "category": "Bag",
+    "brand": "Nike"
+  },
+  {
+    "date": "2024-08-09",
+    "name": "Compact Sling Bag",
+    "description": "A lightweight sling bag for quick and easy access.",
+    "img": "https://i.ibb.co/nnStNM8/6.jpg",
+    "price": 25.99,
+    "category": "Bag",
+    "brand": "Fastrack"
+  },
+  {
+    "date": "2024-08-08",
+    "name": "Heavy-Duty Backpack",
+    "description": "A heavy-duty backpack designed for durability and comfort.",
+    "img": "https://i.ibb.co/2KQjsKq/7.webp",
+    "price": 65.99,
+    "category": "Bag",
+    "brand": "CAT"
+  },
+  {
+    "date": "2024-08-07",
+    "name": "Fashion Tote Bag",
+    "description": "A stylish tote bag for everyday fashion.",
+    "img": "https://i.ibb.co/5hdjQ5R/8.jpg",
+    "price": 40.99,
+    "category": "Bag",
+    "brand": "Kiam"
+  },
+  {
+    "date": "2024-08-06",
+    "name": "Multipurpose Travel Bag",
+    "description": "A multi-compartment travel bag with ample storage space.",
+    "img": "https://i.ibb.co/qnbc9j2/9.jpg",
+    "price": 75.99,
+    "category": "Bag",
+    "brand": "Nike"
+  },
+  {
+    "date": "2024-08-05",
+    "name": "Elegant Handbag",
+    "description": "An elegant handbag suitable for all occasions.",
+    "img": "https://i.ibb.co/BghJBPM/10.webp",
+    "price": 59.99,
+    "category": "Bag",
+    "brand": "Fastrack"
+  }
+]

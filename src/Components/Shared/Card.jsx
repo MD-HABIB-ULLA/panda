@@ -3,11 +3,11 @@ import Button from "./Button";
 const Card = () => {
   return (
     <div>
-      <div className="p-4 bg-[#FF2279]/5    rounded-2xl flex flex-col justify-center gap-5">
+      <div className="p-4 bg-[#fff]   rounded-2xl flex flex-col justify-center gap-5">
         <div className="h-44">
           {" "}
           <img
-            src="https://i.ibb.co/V3RLT2L/pngfuel.png"
+            src="https://th.bing.com/th?id=OPEC.5I5WleC%2f5TnDnw474C474&w=592&h=550&o=5&dpr=1.6&pid=21.1"
             className="h-full mx-auto "
             alt=""
           />
