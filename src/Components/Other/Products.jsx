@@ -11,6 +11,8 @@ const Products = () => {
   const [loading, setLoading] = useState(false);
   const [sort, setSort] = useState("");
   const [brandName, setBrandName] = useState("");
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
   const [page, setPage] = useState("");
   const [brands, setBrands] = useState([]);
   const [count, setCount] = useState([]);
@@ -176,45 +178,74 @@ const Products = () => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <ul className="menu border-r border-gray-600 bg-white text-base-content min-h-full w-72 p-4">
-            <label htmlFor="" className="text-xl font-bold mb-4 block">
-              Categories
-            </label>
-            {brands?.map((categoryData) => (
-              <li key={categoryData.category} className="pl-3">
-                <div
-                  onClick={() => {
-                    setCategory(categoryData.category);
-                    setSearch("");
-                    setBrandName(""); // Clear brand selection when changing category
-                  }}
-                  className={`${
-                    categoryData.category === category && "bg-[#FF136F]/15"
-                  } cursor-pointer p-2 rounded-lg`}
-                >
-                  {categoryData.category}
+          <div className="p-4 border-r border-gray-600 bg-white text-base-content min-h-full w-72">
+            <ul className="menu  ">
+              <label htmlFor="" className="text-xl font-bold mb-4 block">
+                Categories
+              </label>
+              {brands?.map((categoryData) => (
+                <li key={categoryData.category} className="pl-3">
+                  <div
+                    onClick={() => {
+                      setCategory(categoryData.category);
+                      setSearch("");
+                      setBrandName(""); // Clear brand selection when changing category
+                    }}
+                    className={`${
+                      categoryData.category === category && "bg-[#FF136F]/15"
+                    } cursor-pointer p-2 rounded-lg`}
+                  >
+                    {categoryData.category}
+                  </div>
+                  {categoryData.category === category && (
+                    <ul className="space-y-2 menu pl-5">
+                      {categoryData.brands.map((brand, index) => (
+                        <li
+                          onClick={() => {
+                            setCategory(categoryData.category);
+                            setBrandName(brand);
+                          }}
+                          key={index}
+                          className={`text-gray-700 ${
+                            brandName === brand && "bg-gray-400"
+                          } cursor-pointer rounded-lg px-2 py-2`}
+                        >
+                          {brand}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            </ul>
+            <div className="mb-4 px-2">
+              <label className="text-lg font-semibold">Price Range</label>
+              <div className="mt-2 ">
+                <div className="flex items-center gap-2">
+                  <input
+                    type="number"
+                    placeholder="Min Price"
+                    value={minPrice}
+                    onChange={(e) => setMinPrice(e.target.value)}
+                    className="input input-bordered w-full "
+                  />
+                  <input
+                    type="number"
+                    placeholder="Max Price"
+                    value={maxPrice}
+                    onChange={(e) => setMaxPrice(e.target.value)}
+                    className="input input-bordered w-full"
+                  />
                 </div>
-                {categoryData.category === category && (
-                  <ul className="space-y-2 menu pl-5">
-                    {categoryData.brands.map((brand, index) => (
-                      <li
-                        onClick={() => {
-                          setCategory(categoryData.category);
-                          setBrandName(brand);
-                        }}
-                        key={index}
-                        className={`text-gray-700 ${
-                          brandName === brand && "bg-gray-400"
-                        } cursor-pointer rounded-lg px-2 py-2`}
-                      >
-                        {brand}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
+                <button
+                  onClick={() => fetchProducts()}
+                  className="btn btn-primary mt-3 w-full "
+                >
+                  Apply
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
