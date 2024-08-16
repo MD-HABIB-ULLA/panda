@@ -2,7 +2,7 @@ import axios from "axios";
 
 const axiosPublic = axios.create({
   // baseURL: "https://gym-server-pi.vercel.app",
-  baseURL: "http://localhost:3000",
+  baseURL: "https://panda-searver.vercel.app",
 });
 
 const useAxiosPablic = () => {
