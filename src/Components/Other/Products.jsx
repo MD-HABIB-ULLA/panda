@@ -11,17 +11,25 @@ const Products = () => {
   const [loading, setLoading] = useState(false);
   const [sort, setSort] = useState("");
   const [brandName, setBrandName] = useState("");
+  const [inputMinPrice, setInputMinPrice] = useState("");
+  const [inputMaxPrice, setInputMaxPrice] = useState("");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const [page, setPage] = useState("");
   const [brands, setBrands] = useState([]);
   const [count, setCount] = useState([]);
   const axiosPublic = useAxiosPablic();
-  console.log(sort);
+  // console.log(sort);
   const url = new URL(window.location.href);
   const params = new URLSearchParams(url.search);
   const [category, setCategory] = useState(params.get("category") || "");
   const [search, setSearch] = useState(params.get("search") || "");
+
+  const handleApplyFilters = () => {
+    setMinPrice(inputMinPrice); // Update filter state
+    setMaxPrice(inputMaxPrice); // Update filter state
+  };
+
   useEffect(() => {
     setSearch(params.get("search") || "");
     setCategory("");
@@ -51,6 +59,12 @@ const Products = () => {
         if (page) {
           queryParams.append("page", page); // Add sort to query params
         }
+        if (maxPrice) {
+          queryParams.append("maxPrice", maxPrice); // Add sort to query params
+        }
+        if (minPrice) {
+          queryParams.append("minPrice", minPrice); // Add sort to query params
+        }
 
         const urlWithParams = `/products?${queryParams.toString()}`;
         console.log(urlWithParams);
@@ -79,7 +93,16 @@ const Products = () => {
     };
 
     fetchProducts();
-  }, [category, search, brandName, sort, location.pathname, page]);
+  }, [
+    category,
+    search,
+    brandName,
+    sort,
+    location.pathname,
+    page,
+    minPrice,
+    maxPrice,
+  ]);
 
   useEffect(() => {
     axiosPublic
@@ -225,21 +248,21 @@ const Products = () => {
                   <input
                     type="number"
                     placeholder="Min Price"
-                    value={minPrice}
-                    onChange={(e) => setMinPrice(e.target.value)}
+                    value={inputMinPrice}
+                    onChange={(e) => setInputMinPrice(e.target.value)}
                     className="input input-bordered w-full "
                   />
                   <input
                     type="number"
                     placeholder="Max Price"
-                    value={maxPrice}
-                    onChange={(e) => setMaxPrice(e.target.value)}
+                    value={inputMaxPrice}
+                    onChange={(e) => setInputMaxPrice(e.target.value)}
                     className="input input-bordered w-full"
                   />
                 </div>
                 <button
-                  onClick={() => fetchProducts()}
-                  className="btn btn-primary mt-3 w-full "
+                  onClick={handleApplyFilters}
+                  className="btn bg-[#ff3081] text-white mt-3 w-full"
                 >
                   Apply
                 </button>
