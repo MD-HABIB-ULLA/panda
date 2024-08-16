@@ -12,25 +12,25 @@ const ProductDisplay = () => {
 
   useEffect(() => {
     axiosPublic
-      .get("/shoe")
+      .get("/Shoe")
       .then((res) => setShoes(res.data))
       .catch((err) => console.log(err));
   }, []);
   useEffect(() => {
     axiosPublic
-      .get("/watch")
+      .get("/Watch")
       .then((res) => setWatch(res.data))
       .catch((err) => console.log(err));
   }, []);
   useEffect(() => {
     axiosPublic
-      .get("/tv")
+      .get("/TV")
       .then((res) => setTV(res.data))
       .catch((err) => console.log(err));
   }, []);
   useEffect(() => {
     axiosPublic
-      .get("/bag")
+      .get("/Bag")
       .then((res) => setBag(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -53,7 +53,7 @@ const ProductDisplay = () => {
         <div>
           <div className=" flex justify-between items-center pb-5">
             <p className="text-3xl capitalize">Watch</p>
-            <Link to={"/products?category=watch"} className="text-[#eb8f8c]">
+            <Link to={"/products?category=Watch"} className="text-black">
               See More
             </Link>
           </div>
@@ -68,7 +68,7 @@ const ProductDisplay = () => {
         <div>
           <div className=" flex justify-between items-center pb-5">
             <p className="text-3xl capitalize">Shoes</p>
-            <Link to={"/products?category=shoe"} className="text-[#eb8f8c]">
+            <Link to={"/products?category=Shoe"} className="text-[#eb8f8c]">
               See More
             </Link>
           </div>
@@ -83,7 +83,7 @@ const ProductDisplay = () => {
         <div>
           <div className=" flex justify-between items-center pb-5">
             <p className="text-3xl capitalize">Television</p>
-            <Link to={"/products?category=tv"} className="text-[#eb8f8c]">
+            <Link to={"/products?category=TV"} className="text-[#eb8f8c]">
               See More
             </Link>
           </div>
@@ -98,7 +98,7 @@ const ProductDisplay = () => {
         <div>
           <div className=" flex justify-between items-center pb-5">
             <p className="text-3xl capitalize">Bags</p>
-            <Link to={"/products?category=bag"} className="text-[#eb8f8c]">
+            <Link to={"/products?category=Bag"} className="text-[#eb8f8c]">
               See More
             </Link>
           </div>
