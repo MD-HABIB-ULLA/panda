@@ -1,22 +1,46 @@
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import Card from "../Shared/Card";
 import { useEffect, useState } from "react";
 import useAxiosPablic from "../../Hooks/useAxiosPpablic";
 
 const Products = () => {
+  const location = useLocation();
   const [paramsProducts, setParamsProducts] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [sortOption, setSortOption] = useState("");
+
   const axiosPublic = useAxiosPablic();
 
   const url = new URL(window.location.href);
   const params = new URLSearchParams(url.search);
-  const category = params.get("category"); // "shoes"
-  console.log(category);
+  const category = params.get("category");
+  const search = params.get("search");
+  console.log(category, search, sortOption);
+
   useEffect(() => {
-    axiosPublic
-      .get(`/${category}`)
-      .then((res) => setParamsProducts(res.data))
-      .catch((err) => console.log(err));
-  }, []);
+    const fetchProducts = async () => {
+      setLoading(true);
+
+      try {
+        let response;
+
+        if (category) {
+          response = await axiosPublic.get(`/${category}`);
+        } else if (search) {
+          response = await axiosPublic.get(`/products?search=${search}`);
+        } else {
+          response = await axiosPublic.get(`/products`);
+        }
+
+        setParamsProducts(response.data);
+        setLoading(false);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchProducts();
+  }, [category, location.search]);
   console.log(paramsProducts);
   const product = {
     _id: "66bddcee370baaac4d6f42e0",
@@ -42,28 +66,49 @@ const Products = () => {
               >
                 Open drawer
               </label>
-              <button className="btn btn-active drawer-button ">
-                Open drawer
-              </button>
+              <select
+                className="select w-full max-w-xs"
+                value={sortOption}
+                onChange={(e) => setSortOption(e.target.value)}
+              >
+                <option disabled value="">
+                  Pick your favorite Simpson
+                </option>
+                <option value="low-to-high">Low to High</option>
+                <option value="high-to-low">High to Low</option>
+                <option value="newest-first">Newest First</option>
+              </select>
             </div>
           </div>
-          <div className="px-2  ">
-            {paramsProducts ? (
-              <div className="lg:bg-[#FF2279]/15 px-2 py-3 rounded-lg">
-                <div className="">
-                  <div className="grid md:grid-cols-3 gap-4 grid-cols-1 ">
-                    {paramsProducts?.map((product) => (
-                      <Card key={product._id} data={product} />
-                    ))}
+          {paramsProducts?.length > 0 ? (
+            <div className="px-2">
+              {!loading ? (
+                <div className="lg:bg-[#FF2279]/15 px-2 py-3 rounded-lg">
+                  <div className="">
+                    <div className="grid md:grid-cols-3 gap-4 grid-cols-1">
+                      {paramsProducts.map((product) => (
+                        <Card key={product._id} data={product} />
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ) : (
-              <div class="flex justify-center items-center h-screen">
-                <div class="rounded-full h-20 w-20 bg-[#FF136F] animate-ping"></div>
-              </div>
-            )}
-          </div>
+              ) : (
+                <div className="flex justify-center items-center h-screen">
+                  <div className="rounded-full h-20 w-20 bg-[#FF136F] animate-ping"></div>
+                </div>
+              )}
+            </div>
+          ) : (
+            <div className="min-h-screen text-3xl pt-10">
+              {!loading ? (
+                <p>No product found</p>
+              ) : (
+                <div className="flex justify-center items-center h-screen">
+                  <div className="rounded-full h-20 w-20 bg-[#FF136F] animate-ping"></div>
+                </div>
+              )}
+            </div>
+          )}
         </div>
         <div className="drawer-side">
           <label

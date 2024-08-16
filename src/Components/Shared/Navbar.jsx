@@ -1,13 +1,27 @@
 import { FaBars } from "react-icons/fa6";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { IoIosSearch } from "react-icons/io";
 import { AuthContext } from "../../Provider/AuthProvider";
 import useAuth from "../../Hooks/useAuth";
+import { useState } from "react";
 
 const Navbar = () => {
   const { user, signOutUser } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [searchText, setSearchText] = useState("");
+  const handleSubmitBtn = (e) => {
+    e.preventDefault();
 
-  console.log(user);
+    // If you're not on the product page, redirect to the product page
+    if (location.pathname !== "/products") {
+      navigate(`/products?search=${searchText}`);
+    } else {
+      // If you're already on the product page, update the URL to include the search term
+      navigate(`${location.pathname}?search=${searchText}`);
+    }
+  };
+  // console.log(user);
   const listData = [
     {
       name: "Home",
@@ -102,16 +116,27 @@ const Navbar = () => {
               Panda
             </div>
           </Link>
-          <div className="lg:w-full    flex-1 ">
-            <label className="input  input-bordered flex items-center   rounded-full h-10">
-              <input
-                type="text"
-                className="grow flex-1 w-full lg:w-auto"
-                placeholder="Search"
-              />
-              <IoIosSearch />
-            </label>
-          </div>
+          <form
+            className="lg:w-full    flex-1 "
+            onSubmit={handleSubmitBtn}
+            action=""
+          >
+            <div className="lg:w-full   ">
+              <label className="input  input-bordered flex items-center   rounded-full h-10">
+                <input
+                  type="text"
+                  className="grow flex-1 w-full lg:w-auto"
+                  placeholder="Search"
+                  value={searchText}
+                  onChange={(e) => setSearchText(e.target.value)}
+                />
+
+                <button type="submit" className="">
+                  <IoIosSearch className="cursor-pointer" />
+                </button>
+              </label>
+            </div>{" "}
+          </form>
         </div>
 
         <div className="justify-end hidden lg:flex ">
