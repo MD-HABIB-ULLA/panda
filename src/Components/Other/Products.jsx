@@ -33,12 +33,15 @@ const Products = () => {
   };
 
   useEffect(() => {
-    setSearch(params.get("search") || "");
-    setCategory("");
-    setBrandName("");
-    // setBrands("");
+    if ((location.pathname || location.search)) {
+      setSearch(params.get("search") || "");
+      setCategory("");
+      setBrandName("");
+    }
+    console.log("hello");
   }, [location.pathname, location.search]);
-  console.log(search, location);
+  // console.log(search, location);
+  console.log(location.pathname && location.search);
   useEffect(() => {
     const fetchProducts = async () => {
       setLoading(true);
@@ -115,7 +118,7 @@ const Products = () => {
 
   const array = [];
   const i = count / 12;
-  console.log(count);
+
   useEffect(() => {
     if (count < 12) {
       setPage(1);
@@ -127,7 +130,6 @@ const Products = () => {
       array.push(j);
     }
   }
-  console.log(array);
 
   return (
     <div>
