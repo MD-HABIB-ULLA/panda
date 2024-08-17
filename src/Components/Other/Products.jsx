@@ -26,6 +26,8 @@ const Products = () => {
   const [search, setSearch] = useState(params.get("search") || "");
 
   const handleApplyFilters = () => {
+    setCategory("");
+    setBrandName("");
     setMinPrice(inputMinPrice); // Update filter state
     setMaxPrice(inputMaxPrice); // Update filter state
   };
@@ -212,7 +214,9 @@ const Products = () => {
                     onClick={() => {
                       setCategory(categoryData.category);
                       setSearch("");
-                      setBrandName(""); // Clear brand selection when changing category
+                      setBrandName("");
+                      setMinPrice("");
+                      setMaxPrice("");
                     }}
                     className={`${
                       categoryData.category === category && "bg-[#FF136F]/15"
@@ -267,6 +271,20 @@ const Products = () => {
                   Apply
                 </button>
               </div>
+            </div>
+            <div>
+              <p
+                className="text-xl font-bold text-center bg-gray-300 px-2 py-2 rounded-lg cursor-pointer"
+                onClick={() => {
+                  setCategory("");
+                  setBrandName("");
+                  setSearch("");
+                  setMinPrice("");
+                  setMaxPrice("");
+                }}
+              >
+                Reset all{" "}
+              </p>
             </div>
           </div>
         </div>
