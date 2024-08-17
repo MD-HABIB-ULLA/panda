@@ -43,5 +43,5 @@ This is the frontend of a single-page website built with React.js, allowing user
 [Live Link](https://panda-9805f.web.app/)
 
 
-<img src="https://ibb.co/rM5VWDZ" alt="docsify" class="d-block width-full">
+<img src="https://ibb.co/rM5VWDZhttps://i.ibb.co/mth3xfH/2024-08-17-08-04-30-Settings.png" alt="docsify" class="d-block width-full">
 
