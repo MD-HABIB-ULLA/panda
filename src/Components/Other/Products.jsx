@@ -26,6 +26,7 @@ const Products = () => {
   const [search, setSearch] = useState(params.get("search") || "");
 
   const handleApplyFilters = () => {
+    setSearch("")
     setCategory("");
     setBrandName("");
     setMinPrice(inputMinPrice); // Update filter state
